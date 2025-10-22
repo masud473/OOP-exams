@@ -10,12 +10,7 @@ private:
     double data;
 
 public:
-    Customer()
-    {
-        data = 0;
-        id = -1;
-    }
-    void reg(long long id, string a, string b, string c)
+    Customer(long long id, string a, string b, string c)
     {
         this->id = id;
         name = a, address = b, number = c;
@@ -43,16 +38,17 @@ int main(int argc, char const *argv[])
 {
     int n;
     cin >> n;
-    vector<Customer> arr(n);
+    vector<Customer> arr;
     for (int i = 0; i < n; i++)
     {
         long long id;
         string a, b, c;
         cin >> id >> a >> b >> c;
-        arr[i].reg(id, a, b, c);
+        Customer temp(id, a, b, c);
         double data;
         cin >> data;
-        arr[i].setData(data);
+        temp.setData(data);
+        arr.push_back(temp);
     }
     for (int i = 0; i < n; i++)
     {
