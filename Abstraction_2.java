@@ -1,12 +1,12 @@
 interface A {
     public void temp();
 
-    public default void func() {
+    public default void func() {// use default to have abstract class like facilities
         System.out.println("Something");
     }
 }
 
-class B implements A {
+class B implements A {// implement with outer class
     @Override
     public void temp() {
         System.out.println("Something else");
@@ -18,7 +18,7 @@ public class Abstraction_2 {
         B b = new B();
         b.func();
         b.temp();
-        A a = new A() {
+        A a = new A() {// inplement with inner anonymous class
             @Override
             public void temp() {
                 System.out.println("Something");
