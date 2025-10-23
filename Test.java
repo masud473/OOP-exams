@@ -1,11 +1,15 @@
 
 class Fruit {
+    int x = 1;
+
     void f() {
         System.out.println("fruit");
     }
 }
 
 class Apple extends Fruit {
+    int x = 2;
+
     void f() {
         System.out.println("Apple");
     }
@@ -19,7 +23,9 @@ class Orange extends Fruit {
 }
 
 class GoldenDelicious extends Apple {
-    void gd() {
+    int x = 3;
+
+    void f() {
         System.out.println("Golden Delicious");
     }
 }
@@ -32,9 +38,10 @@ class Macintosh extends Apple {
 
 public class Test {
     public static void main(String[] args) {
-        Apple fruit = new GoldenDelicious();
+        Fruit fruit = new GoldenDelicious();
         // children-grandchildren can use my property but i can't use theirs
         // child instance also equals to decendent
         fruit.f();
+        System.out.println(fruit.x);
     }
 }
