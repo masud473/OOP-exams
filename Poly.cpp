@@ -4,16 +4,13 @@ class Player
 {
 public:
     int val = 0;
-    virtual void Show()
-    {
-        cout << "I am player\n";
-    }
+    virtual void Show() = 0;
 };
 class Cricket : public Player
 {
 public:
     int val = 2;
-    void Show()
+    void Show() override
     {
         cout << "I am Cricket Player\n";
     }
@@ -25,8 +22,7 @@ public:
 int main()
 {
     Player *player = NULL;
-    player = new Player();
-    player->Show();
+
     player = new Cricket();
     player->Show();
     cout << player->val;
