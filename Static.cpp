@@ -18,11 +18,12 @@ public:
         cout << a << endl;
     }
 };
-int A::a = 0;
+int A::a = 0; // initialization is mandatory for static data members
 int main(int argc, char const *argv[])
 {
     A a1, a2;
-    A::real();
-    a1.obj();
+    A::real(); // instance is not mandatory for static
+    a1.obj();  // instance is mandatory for non-static
+
     return 0;
 }
